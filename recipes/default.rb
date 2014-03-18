@@ -30,7 +30,6 @@ if (splunk_params['username'] and splunk_params['password'] and
       index=splunk_params['index'],
       scheme=splunk_params['scheme']
     ]
-    source File.join(Gem.all_load_paths.grep(/chef-handler-splunk/).first,
-                     'chef', 'handler', 'splunk.rb')
+    source Gem.find_files(File.join('chef', 'handler', 'splunk.rb')).first
   end
 end
